@@ -1,1 +1,2 @@
-# Functional-Data-Structures\n Implementation of popular purely functional data structures in OCaml
+# Functional-Data-Structures
+Implementation of popular purely functional data structures in OCaml
