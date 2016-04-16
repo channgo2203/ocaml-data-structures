@@ -1,42 +1,32 @@
-(* implementation of related list data structures *)
-
+(** Exception when a stack is empty *)
 exception Stack_empty
 
-(* 
- * Signature for stacks
- *)
-module type Fdsstack_t = sig 
+(** Implementation of a stack using OCaml list *)
+module type Liststack_t = sig 
 	type 'a t
-	(* empty stack *)
+	
 	val empty : 'a t
+	(** Empty stack *)
 	
-	(* empty checking *)
 	val isEmpty : 'a t -> bool
-
-	(* push an element on top of the given stack 
-	 * return a new stack with this element 
-	 *)
+	(** Return true if the given stack is empty. Otherwise return false *)
+	
 	val push : 'a -> 'a t -> 'a t
+	(** Push a element on top of the given stack and return a new stack *)
 	
-	(* pop the top element 
-	 * return a new stack removing the top element 
-	 *)
 	val pop : 'a t -> 'a t
-	
-	(* get the top element
-	 * the stack remain the same as before 
+	(** Pop the top element of the given stack and return a new stack 
+		removing the top element 
 	 *)
+	
 	val top : 'a t -> 'a
-	
-	(* print the stack content *)
+	(** Return the top element. The given stack remain the same as before *)
+	 
 	val print : 'a t -> ('a -> string) -> unit
-	
+	(** Print the stack content to standard stdout *)
 end
 
-(*
- * An implementation of stack with primitive OCaml list
- *) 
-module Fdsstack = struct 
+module Liststack : Liststack_t = struct 
 	type 'a t = 'a list
 
 	let empty = []
