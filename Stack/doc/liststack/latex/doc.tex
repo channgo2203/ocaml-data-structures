@@ -1,0 +1,125 @@
+\documentclass[11pt]{article} 
+\usepackage[latin1]{inputenc} 
+\usepackage[T1]{fontenc} 
+\usepackage{textcomp}
+\usepackage{fullpage} 
+\usepackage{url} 
+\usepackage{ocamldoc}
+\begin{document}
+\tableofcontents
+\section{Module {\tt{Liststack}} : Last-in-first-out stack data structure.}
+\label{module:Liststack}\index{Liststack@\verb`Liststack`}
+
+
+
+ 	This module implements stacks (LIFOs) using OCaml list
+
+
+
+\ocamldocvspace{0.5cm}
+
+
+
+\label{type:Liststack.t}\begin{ocamldoccode}
+type {\textquotesingle}a t 
+\end{ocamldoccode}
+\index{t@\verb`t`}
+\begin{ocamldocdescription}
+The type of stacks containing the elements of type {\tt{{\textquotesingle}a}}.
+
+
+\end{ocamldocdescription}
+
+
+
+
+\label{exception:Liststack.Stack-underscoreempty}\begin{ocamldoccode}
+exception Stack_empty
+\end{ocamldoccode}
+\index{Stack-underscoreempty@\verb`Stack_empty`}
+\begin{ocamldocdescription}
+Raised when {\tt{Liststack.pop}}[\ref{val:Liststack.pop}] or {\tt{Liststack.top}}[\ref{val:Liststack.top}] is applied to an empty stack.
+
+
+\end{ocamldocdescription}
+
+
+
+
+\label{val:Liststack.create}\begin{ocamldoccode}
+val create : unit -> {\textquotesingle}a t
+\end{ocamldoccode}
+\index{create@\verb`create`}
+\begin{ocamldocdescription}
+Return a new stack, initially empty.
+
+
+\end{ocamldocdescription}
+
+
+
+
+\label{val:Liststack.is-underscoreempty}\begin{ocamldoccode}
+val is_empty : {\textquotesingle}a t -> bool
+\end{ocamldoccode}
+\index{is-underscoreempty@\verb`is_empty`}
+\begin{ocamldocdescription}
+Return {\tt{true}} if the given stack is empty. Otherwise return {\tt{false}}.
+
+
+\end{ocamldocdescription}
+
+
+
+
+\label{val:Liststack.push}\begin{ocamldoccode}
+val push : {\textquotesingle}a -> {\textquotesingle}a t -> {\textquotesingle}a t
+\end{ocamldoccode}
+\index{push@\verb`push`}
+\begin{ocamldocdescription}
+{\tt{push x s}} adds the element {\tt{x}} at the top of stack {\tt{s}} and returns the new stack.
+
+
+\end{ocamldocdescription}
+
+
+
+
+\label{val:Liststack.pop}\begin{ocamldoccode}
+val pop : {\textquotesingle}a t -> {\textquotesingle}a t
+\end{ocamldoccode}
+\index{pop@\verb`pop`}
+\begin{ocamldocdescription}
+{\tt{pop s}} removes the top element of stack {\tt{s}} and return the new stack.
+
+
+\end{ocamldocdescription}
+
+
+
+
+\label{val:Liststack.top}\begin{ocamldoccode}
+val top : {\textquotesingle}a t -> {\textquotesingle}a
+\end{ocamldoccode}
+\index{top@\verb`top`}
+\begin{ocamldocdescription}
+{\tt{top s}} returns the top element. Stack {\tt{s}} remains the same as before.
+
+
+\end{ocamldocdescription}
+
+
+
+
+\label{val:Liststack.print}\begin{ocamldoccode}
+val print : {\textquotesingle}a t -> ({\textquotesingle}a -> string) -> unit
+\end{ocamldoccode}
+\index{print@\verb`print`}
+\begin{ocamldocdescription}
+Print the stack content to standard stdout.
+
+
+\end{ocamldocdescription}
+
+
+\end{document}

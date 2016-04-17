@@ -1,19 +1,31 @@
-(* Modules testing *)
+open Listplus
 
-open Fdsstack
+(* test listplus *)
+let _ = let l1 = [1;2;3;4;5;6;7;8;9] in 
+	let l2 = [10;11;12;13;14;15;16;17;18;19] in 
+	begin
+		print_string "\nThe list l1:\n";
+		Listplus.print l1 string_of_int;
+		
+		print_string "\nThe last element of l1:\n";
+		match (Listplus.last l1) with
+			| None -> print_string "List is empty"
+			| Some x -> print_string (string_of_int x);
+		
+		print_string "\nThe longest prefix of l1:\n";
+		Listplus.print (Listplus.biggest_prefix l1) string_of_int;
+		
+		print_string "\nThe truncate 3 l1:\n";
+		Listplus.print (Listplus.truncate 3 l1) string_of_int;
+		
+		print_string "\nThe concatenation of l1 and l2:\n";
+		Listplus.print (Listplus.catenate l1 l2) string_of_int;
 
-(* test Stack *)
-let _ = let s1 = let s0 = Fdsstack.empty in 
-	Fdsstack.push 3 (Fdsstack.push 2 (Fdsstack.push 1 (s0))) in 
-	Fdsstack.print s1 string_of_int;
-	try ( 
-		let s2 = Fdsstack.pop s1 in Fdsstack.print s2 string_of_int;
-		let s3 = Fdsstack.pop s2 in Fdsstack.print s3 string_of_int;
-		let s4 = Fdsstack.pop s3 in Fdsstack.print s4 string_of_int;
-		let s5 = Fdsstack.pop s4 in Fdsstack.print s5 string_of_int
-	)
-	with Stack_empty -> print_string "\nStack is empty\n";
-	let strstack = Fdsstack.push "three" (Fdsstack.push "two" (Fdsstack.push "one" (Fdsstack.empty))) in 
-		Fdsstack.print strstack (fun x -> x)
-
-(* test list facility *)
+		print_string "\nThe prefixes of l1:\n";
+		Listplus.print_pre_suffixes (Listplus.prefixes l1) string_of_int;
+		
+		print_string "\nThe suffixes of l2:\n";
+		Listplus.print_pre_suffixes (Listplus.suffixes l2) string_of_int;
+		print_string "\n"
+		
+	end

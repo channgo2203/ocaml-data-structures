@@ -1,0 +1,126 @@
+\documentclass[11pt]{article} 
+\usepackage[latin1]{inputenc} 
+\usepackage[T1]{fontenc} 
+\usepackage{textcomp}
+\usepackage{fullpage} 
+\usepackage{url} 
+\usepackage{ocamldoc}
+\begin{document}
+\tableofcontents
+\section{Module {\tt{Listplus}} : This module provides some extra useful functions for OCaml list.}
+\label{module:Listplus}\index{Listplus@\verb`Listplus`}
+
+
+
+
+\ocamldocvspace{0.5cm}
+
+
+
+\label{val:Listplus.last}\begin{ocamldoccode}
+val last : {\textquotesingle}a list -> {\textquotesingle}a option
+\end{ocamldoccode}
+\index{last@\verb`last`}
+\begin{ocamldocdescription}
+Return the last element of the given list.
+
+
+\end{ocamldocdescription}
+
+
+
+
+\label{val:Listplus.biggest-underscoreprefix}\begin{ocamldoccode}
+val biggest_prefix : {\textquotesingle}a list -> {\textquotesingle}a list
+\end{ocamldoccode}
+\index{biggest-underscoreprefix@\verb`biggest_prefix`}
+\begin{ocamldocdescription}
+Return the prefix without the last element of the given list. 
+	For example, {\tt{biggest\_prefix [1;2;3]}} $=$ {\tt{[1;2]}}.
+
+
+\end{ocamldocdescription}
+
+
+
+
+\label{val:Listplus.truncate}\begin{ocamldoccode}
+val truncate : {\textquotesingle}a -> {\textquotesingle}a list -> {\textquotesingle}a list
+\end{ocamldoccode}
+\index{truncate@\verb`truncate`}
+\begin{ocamldocdescription}
+{\tt{truncate a l}} truncates list {\tt{l}} from the first occurrence of {\tt{a}}. 
+	Return {\tt{l}} if {\tt{a}} is not found in {\tt{l}}.
+
+
+\end{ocamldocdescription}
+
+
+
+
+\label{val:Listplus.catenate}\begin{ocamldoccode}
+val catenate : {\textquotesingle}a list -> {\textquotesingle}a list -> {\textquotesingle}a list
+\end{ocamldoccode}
+\index{catenate@\verb`catenate`}
+\begin{ocamldocdescription}
+Catenate two lists.
+
+
+\end{ocamldocdescription}
+
+
+
+
+\label{val:Listplus.prefixes}\begin{ocamldoccode}
+val prefixes : {\textquotesingle}a list -> {\textquotesingle}a list list
+\end{ocamldoccode}
+\index{prefixes@\verb`prefixes`}
+\begin{ocamldocdescription}
+Return a list of all prefixes of the given list in increasing order of length. 
+	For example, {\tt{prefixes [1;2;3]}} $=$ {\tt{[[];[1];[1;2];[1;2;3]]}}.
+
+
+\end{ocamldocdescription}
+
+
+
+
+\label{val:Listplus.suffixes}\begin{ocamldoccode}
+val suffixes : {\textquotesingle}a list -> {\textquotesingle}a list list
+\end{ocamldoccode}
+\index{suffixes@\verb`suffixes`}
+\begin{ocamldocdescription}
+Return a list of all suffixes of the given list in decreasing order of length. 
+	For example, {\tt{suffixes [1;2;3]}} $=$ {\tt{[[1;2;3];[2,3];[3],[]]}}.
+
+
+\end{ocamldocdescription}
+
+
+
+
+\label{val:Listplus.print}\begin{ocamldoccode}
+val print : {\textquotesingle}a list -> ({\textquotesingle}a -> string) -> unit
+\end{ocamldoccode}
+\index{print@\verb`print`}
+\begin{ocamldocdescription}
+Print the list content to standard stdout.
+
+
+\end{ocamldocdescription}
+
+
+
+
+\label{val:Listplus.print-underscorepre-underscoresuffixes}\begin{ocamldoccode}
+val print_pre_suffixes : {\textquotesingle}a list list -> ({\textquotesingle}a -> string) -> unit
+\end{ocamldoccode}
+\index{print-underscorepre-underscoresuffixes@\verb`print_pre_suffixes`}
+\begin{ocamldocdescription}
+Print the prefixes or suffixes of a list to standard stdout.
+
+
+\end{ocamldocdescription}
+
+
+\end{document}

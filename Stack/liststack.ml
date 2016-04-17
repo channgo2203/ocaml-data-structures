@@ -23,5 +23,5 @@ let print s f =
 		| [] -> ()
 		| h::t -> print_string (" " ^ (printfunction h)); print_aux t printfunction
 	in
-		print_string "\n["; print_aux s f; print_string " ]\n"
+		print_string "["; print_aux s f; print_string " ]"
 
