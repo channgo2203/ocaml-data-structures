@@ -7,7 +7,8 @@
 
 OCAMLMAKEFILE = ../OCamlMakefile
 
-SOURCES = 	liststack.ml \
+SOURCES = 	liststack.mli \
+			liststack.ml \
 			test.ml 
 
 RESULT = test

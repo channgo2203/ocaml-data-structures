@@ -1,5 +1,5 @@
 (** This module provides some extra useful functions for OCaml list *)
-module Listfacility = sig  
+module Listfacility : sig  
 	
 	type 'a list
 	
